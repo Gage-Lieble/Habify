@@ -47,5 +47,10 @@ def login_user(request):
             return HttpResponseRedirect(reverse('sober_app:index'))
         return render(request, 'index.html')
 
+
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('user_app:landing'))
+
 def get_csrf(request):
     return JsonResponse({'csrfToken': get_token(request)})
