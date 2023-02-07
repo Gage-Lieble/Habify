@@ -20,7 +20,7 @@ Data that is stored in a SQLite database
  
  ## Todo
  MVP
- - [ ] User account system
+ - [X] User account system
  - [ ] User dashboard
  - [ ] Calendar
  
