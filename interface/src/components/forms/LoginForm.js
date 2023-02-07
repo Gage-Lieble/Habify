@@ -1,21 +1,20 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
 
-const SignUpForm = () => {
+
+const LoginForm = () => {
 
     const [csrfToken, setCsrfToken] = useState()
     useEffect(() => {
         axios.get('api/csrf').then(res => setCsrfToken(res.data.csrfToken))
     }, [])
     
-    const formSubHandler = (e) =>{
+    const LogSubHandler = (e) =>{
+        
         e.preventDefault()
-        console.log(e.target.user.value)
-        axios.post('api/new/', {
+        axios.post('api/login/', {
             username: e.target.user.value,
             password: e.target.pass.value,
-            first_name: e.target.fname.value,
-            last_name: e.target.lname.value,
         },{
             headers: {'X-CSRFToken': csrfToken}
         }).then(function(res){
@@ -28,15 +27,12 @@ const SignUpForm = () => {
         )
     }
     return (
-        <form onSubmit={formSubHandler}>
-            
+        <form onSubmit={LogSubHandler}>
             <input type="text" placeholder="username" id="user"/>
-            <input type="text" placeholder="first name" id="fname"/>
-            <input type="text" placeholder="last name" id="lname"/>
             <input type="text" placeholder="password" id="pass"/>
-            <input type="submit"/>
+            <input type="submit" />
         </form>
     )
 }
 
-export default SignUpForm
+export default LoginForm
