@@ -1,28 +1,29 @@
-from django.shortcuts import render
+# Models import
 from django.contrib.auth.models import User
-from rest_framework import generics
-from .serializers import UserSerializer
-from rest_framework.decorators import api_view
-from django.contrib.auth import authenticate, login, logout
+from .models import *
+# Render import
 from django.http import HttpResponseRedirect
-from django.urls import reverse
-
 from django.http import JsonResponse
+from django.shortcuts import render
+from django.urls import reverse
+# DRF import
+from rest_framework.decorators import api_view
+from rest_framework import generics
+from .serializers import *
+# Auth import
+from django.contrib.auth import authenticate, login, logout
 from django.middleware.csrf import get_token
-# Create your views here.
+
 
 def landing(request):
-    context = {
-        'test': 34534
-    }
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')
 
+
+# Accounts
 class UserView(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-# class CreateUser(generics.CreateAPIView):
-#     serializer_class = UserSerializer
 @api_view(['POST'])
 def CreateUser(request):
     if request.method == 'POST':
@@ -51,5 +52,14 @@ def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse('user_app:landing'))
 
+
+# Auth
 def get_csrf(request):
     return JsonResponse({'csrfToken': get_token(request)})
+
+
+# Calendar
+
+class DayLogView(generics.ListAPIView):
+    queryset = DayLogger.objects.all()
+    serializer_class = DayLogSerializer

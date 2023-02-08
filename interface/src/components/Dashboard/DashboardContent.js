@@ -1,12 +1,16 @@
 import QuotesRender from "./quotes/QuotesRender"
+import DayLogger from "./Logger/DayLogger"
+import UserContext from "../../context/user-context"
+import React, {useContext} from "react"
 
-
-const DashboardContent = (props) => {
+const DashboardContent = () => {
+    const user = useContext(UserContext)
     return (
         <>
         This is Dashboard!
         <QuotesRender />
-        <a href="/api/logout/">Logout {props.loggedUser}</a>
+        <DayLogger />
+        <a href="/api/logout/">Logout {user}</a>
         </>
     )
 }
