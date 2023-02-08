@@ -1,15 +1,13 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
-const DayLogger = (props) => {
-
+import { useEffect, useState, useContext } from "react"
+import UserContext from "../../../context/user-context"
+const DayLogger = () => {
+    const user = useContext(UserContext)
     const [days, setDays] = useState([])
     useEffect(() => {
         axios.get('api/log/').then(res => {
             for(let day of res.data){
-                console.log(day)
-                console.log(props.user)
-                if (day.user === props.user){
-                    console.log('match')
+                if (day.user === user){
                     setDays((prev) => { return [day, ...prev]})
                 } 
             }
