@@ -9,4 +9,5 @@ urlpatterns = [
     path('api/login/', views.login_user, name="login"),
     path('api/logout/', views.logout_user, name="logout"),
     path('api/csrf/', views.get_csrf),
+    path('api/log/', views.DayLogView.as_view(), name="daylog")
 ]
