@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    print('reidfbs')
+    print('Index - sober_app views')
     context = {
         'test': 49
     }

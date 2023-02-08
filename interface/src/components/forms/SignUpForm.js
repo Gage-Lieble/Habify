@@ -28,14 +28,18 @@ const SignUpForm = () => {
         )
     }
     return (
-        <form onSubmit={formSubHandler}>
-            
-            <input type="text" placeholder="username" id="user"/>
-            <input type="text" placeholder="first name" id="fname"/>
-            <input type="text" placeholder="last name" id="lname"/>
-            <input type="text" placeholder="password" id="pass"/>
-            <input type="submit"/>
-        </form>
+        <>
+        <h3>Signup</h3>
+            <form onSubmit={formSubHandler}>
+                
+                <input type="text" placeholder="username" id="user"/>
+                <input type="text" placeholder="first name" id="fname"/>
+                <input type="text" placeholder="last name" id="lname"/>
+                <input type="text" placeholder="password" id="pass"/>
+                <input type="submit"/>
+            </form>
+        
+        </>
     )
 }
 
