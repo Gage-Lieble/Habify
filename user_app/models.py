@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class DayLogger(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=datetime.now, blank=True)
-    result = models.CharField(max_length=20)
+    result = models.BooleanField(default=False)
     notes = models.CharField(max_length=250)
     def __str__(self):
         return f"{self.user}, {self.date}, {self.result}"

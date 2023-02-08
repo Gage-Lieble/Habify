@@ -18,7 +18,7 @@ const DayLogger = (props) => {
     }, [setDays])
     return (
         <>
-        {days.map(days => <div>{days.user}, {days.result}, {days.notes}</div>)}
+        {days.map(days => <div>{days.user}, {days.date}, {days.result.toString()}, {days.notes}</div>)}
         </>
     )
 }
