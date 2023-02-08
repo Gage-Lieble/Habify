@@ -28,3 +28,39 @@ Data that is stored in a SQLite database
  - [ ] User reward system
  - [ ] User sober streaks
  - [ ] Add requierments.txt & package.json (npm install --save my-dependency) for install
+
+## How to install locally
+1. Clone this repo into a folder on your machine ([Github docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)).
+You should now have all the project files as well as 2 files, one called **"requirments.txt"** and the other **"package.json"**
+
+---
+
+2. You may want a virtual environment to house all the packages that are about to be installed. Todo so use the command ```python -m venv venv``` followed by ```venv\Scripts\activate```, that will create & activate the virtual environment. For more info ([Realpython.com](https://realpython.com/python-virtual-environments-a-primer))
+
+---
+
+3. To install the backend portion of this app, with the command line pointed to the same directory as requirments.txt, use command ```pip install -r requirements.txt```. You should now have django in addition to all the other python packages.
+
+---
+
+4. To install the front end portion of this app, **"cd"** into the "interface" folder and use command ```npm install```. You should now have React and all other javascript dependencies.
+
+---
+
+5. While in the same directory, use command ```npm run build``` to build the react app.
+
+---
+
+6. Now **"cd .."** back to the main directory and run the commands ```python manage.py makemigrations``` and ```python manage.py migrate```.
+
+---
+
+7. Finally use command ```python manage.py runserver``` to create a local server and open the provided link.
+
+---
+
+
+Notes: 
+- If you want to make any changes to any of the react files. you must **"cd"** back into the "interface" folder and use command ```npm run build```
+- If you want to access the database use command ```python manage.py createsuperuser```. After filling out the form you can access the admin panel by visting **"ht<span>tp://YOURLOCALHOST/admin</span>"** and logging in.
+
