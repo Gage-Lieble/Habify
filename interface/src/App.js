@@ -1,12 +1,11 @@
-import SignUpForm from "./components/Accounts/SignUpForm";
-import LoginForm from "./components/Accounts/LoginForm";
 import ToggleFormBtn from './components/Accounts/ToggleFormBtn'
+import DashboardContent from './components/Dashboard/DashboardContent'
 
 function App() {
 
   let loggedUser = document.getElementById('username').value
 
-  let content = <a href="/api/logout/">Logout {loggedUser}</a>
+  let content = <DashboardContent loggedUser={loggedUser} />
   if (loggedUser === "AnonymousUser"){
     content = <ToggleFormBtn />
   }

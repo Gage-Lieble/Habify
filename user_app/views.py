@@ -44,7 +44,6 @@ def login_user(request):
         if user is not None:
             print('User Logged in - views.py')
             login(request, user)
-            return HttpResponseRedirect(reverse('sober_app:index'))
         return render(request, 'index.html')
 
 
