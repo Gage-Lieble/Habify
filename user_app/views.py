@@ -42,9 +42,8 @@ def login_user(request):
     if request.method == 'POST':
         user = authenticate(request, username=request.data['username'], password=request.data['password'])
         if user is not None:
-            print('yes')
+            print('User Logged in - views.py')
             login(request, user)
-            return HttpResponseRedirect(reverse('sober_app:index'))
         return render(request, 'index.html')
 
 
