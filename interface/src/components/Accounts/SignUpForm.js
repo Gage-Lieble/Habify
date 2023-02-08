@@ -20,6 +20,7 @@ const SignUpForm = () => {
             headers: {'X-CSRFToken': csrfToken}
         }).then(function(res){
             console.log(res)
+            window.location.reload();
         }
         ).catch(function(err){
             console.log(err)

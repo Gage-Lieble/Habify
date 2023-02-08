@@ -29,7 +29,7 @@ const LoginForm = () => {
             console.log(res)
             usernameHtml = e.target.user.value
             setUsername(usernameHtml)
-        
+            window.location.reload();
         }
         ).catch(function(err){
             console.log(err)
