@@ -27,6 +27,7 @@ Data that is stored in a SQLite database
  More features
  - [ ] User reward system
  - [ ] User sober streaks
+ - [ ] Motivational quotes
  - [ ] Add requierments.txt & package.json (npm install --save my-dependency) for install
 
 ## How to install locally
