@@ -1,7 +1,9 @@
+import Day from "./Day"
 import axios from "axios"
 import { useEffect, useState, useContext } from "react"
 import UserContext from "../../../context/user-context"
-const DayLogger = () => {
+
+const Calendar = () => {
     const user = useContext(UserContext)
     const [days, setDays] = useState([])
     useEffect(() => {
@@ -16,9 +18,9 @@ const DayLogger = () => {
     }, [setDays])
     return (
         <>
-        {days.map(days => <div>{days.user}, {days.date}, {days.result.toString()}, {days.notes}</div>)}
+        {days.map(days => <Day user={days.user} date={days.date} result={days.result} notes={days.notes}/>)}
         </>
     )
 }
 
-export default DayLogger
+export default Calendar

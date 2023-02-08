@@ -61,5 +61,5 @@ def get_csrf(request):
 # Calendar
 
 class DayLogView(generics.ListAPIView):
-    queryset = DayLogger.objects.all()
+    queryset = Day.objects.all()
     serializer_class = DayLogSerializer

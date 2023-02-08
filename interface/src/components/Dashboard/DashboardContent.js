@@ -1,5 +1,5 @@
 import QuotesRender from "./quotes/QuotesRender"
-import DayLogger from "./Logger/DayLogger"
+import Calendar from "./Logger/Calendar"
 import UserContext from "../../context/user-context"
 import React, {useContext} from "react"
 
@@ -9,7 +9,7 @@ const DashboardContent = () => {
         <>
         This is Dashboard!
         <QuotesRender />
-        <DayLogger />
+        <Calendar />
         <a href="/api/logout/">Logout {user}</a>
         </>
     )
