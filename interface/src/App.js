@@ -13,7 +13,6 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={loggedUser}>
-        
         <h2>Soberize</h2>
         {content}
       </UserContext.Provider>

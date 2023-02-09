@@ -20,7 +20,7 @@ const DayActivityForm = (props) => {
         },{
             headers: {'X-CSRFToken': csrfToken}
         }).then(
-            props.resetform
+            window.location.reload()
         )
 
     }

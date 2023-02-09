@@ -7,7 +7,6 @@ const DashboardContent = () => {
     const user = useContext(UserContext)
     return (
         <>
-        This is Dashboard!
         <QuotesRender />
         <Calendar />
         <a href="/api/logout/">Logout {user}</a>

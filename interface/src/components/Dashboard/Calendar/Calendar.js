@@ -41,12 +41,14 @@ const Calendar = () => {
         }else{
             didMount.current = true
         }
-    },[days])
+    },[days, makeCal])
+
+
 
     return (
         <>
         {actCal}
-        <DayActivityForm resetform={getUserDays}/>
+        <DayActivityForm />
         </>
     )
 }
