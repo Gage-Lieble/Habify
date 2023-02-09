@@ -13,7 +13,7 @@ const Calendar = () => {
     const getUserDays = () => {
         axios.get('api/log/').then(res => {
             for(let day of res.data){
-                if (day.user === user){
+                if (day.user === user.user){
                     setDays((prev) => { return [day, ...prev]})
                 } 
             }
@@ -34,14 +34,15 @@ const Calendar = () => {
       }
     const didMount = useRef(false)
     const [actCal, setActCal] = useState()
+    const [points, setPoints] = useState({streak:user.streak, coins:user.coins})
     useEffect(() => {
         if(didMount.current){
             setActCal(<ActivityCalendar sampleData={days} showMonth={true} colorCustomization={colorCustomization} />)
-
+            setPoints({streak:user.streak, coins:user.coins})
         }else{
             didMount.current = true
         }
-    },[days, makeCal])
+    },[days])
 
 
 
@@ -49,6 +50,7 @@ const Calendar = () => {
         <>
         {actCal}
         <DayActivityForm />
+        Coins: {points.coins}, Streak: {points.streak}
         </>
     )
 }

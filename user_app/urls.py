@@ -11,4 +11,5 @@ urlpatterns = [
     path('api/csrf/', views.get_csrf),
     path('api/log/', views.DayLogView.as_view(), name="daylog"),
     path('api/daylog/', views.NewDayLog),
+    path('api/profile/', views.ProfileView.as_view())
 ]

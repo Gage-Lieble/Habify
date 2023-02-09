@@ -83,8 +83,9 @@ def NewDayLog(request):
             notes = request.data['notes']
         )
         user_profile = Profile.objects.get(user=request.user)
-        print(user_profile.last_updated)
-        if activity == 1 or yesterdays_date != str(user_profile.last_updated):
+        user_days = Day.objects.filter(user=request.user)
+        print(len(user_days))
+        if activity == 1 or yesterdays_date != str(user_profile.last_updated) and len(user_days) > 1: # checks if a day was missed or for unsober and if its users first log
             user_profile.streak = 0
             if user_profile.coins - 10 < 0:
                 user_profile.coins = 0
@@ -98,3 +99,7 @@ def NewDayLog(request):
             user_profile.last_updated = datetime.now()
             user_profile.save()
         return render(request, 'index.html')
+
+class ProfileView(generics.ListAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
