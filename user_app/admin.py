@@ -4,3 +4,4 @@ from .models import *
 
 
 admin.site.register(Day)
+admin.site.register(Profile)

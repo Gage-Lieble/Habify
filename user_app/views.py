@@ -37,6 +37,9 @@ def CreateUser(request):
             password=request.data['password'],
             email=''
         )
+        profile = Profile.objects.create(
+            user = user
+        )
         return render(request, 'index.html')
 
 @api_view(['POST'])
@@ -70,11 +73,26 @@ class DayLogView(generics.ListAPIView):
 @api_view(['POST'])
 def NewDayLog(request):
     if request.method == 'POST':
-        print(request.data) 
+        activity = request.data['activity']
         new_day = Day.objects.create(
             user=request.user,
             day=str(datetime.now())[0:10],
-            activity = request.data['activity'],
+            activity = activity,
             notes = request.data['notes']
         )
+        user_profile = Profile.objects.get(user=request.user)
+        print(user_profile)
+        if activity == 5:
+            user_profile.streak += 1
+            user_profile.coins += 50
+            user_profile.last_updated = datetime.now()
+            user_profile.save()
+        elif activity == 1:
+            user_profile.streak = 0
+            if user_profile.coins - 10 < 0:
+                user_profile.coins = 0
+            else:
+                user_profile.coins -= 10
+            user_profile.last_updated = datetime.now()
+            user_profile.save()
         return render(request, 'index.html')
