@@ -11,6 +11,9 @@ const QuotesRender = () => {
     const genQuotes = () => {
         axios.get('https://type.fit/api/quotes').then(res => {
             let randQuote = res.data[Math.floor(Math.random() * res.data.length)]
+            if(randQuote.author === null){
+                randQuote.author = "Incognito"
+            }
             let finalQuote = `${randQuote.text} - ${randQuote.author}`
             setQuote(finalQuote)
     })
