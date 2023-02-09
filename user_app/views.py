@@ -13,7 +13,8 @@ from .serializers import *
 # Auth import
 from django.contrib.auth import authenticate, login, logout
 from django.middleware.csrf import get_token
-
+# Extra
+from datetime import datetime 
 
 def landing(request):
     return render(request, 'index.html')
@@ -63,3 +64,17 @@ def get_csrf(request):
 class DayLogView(generics.ListAPIView):
     queryset = Day.objects.all()
     serializer_class = DayLogSerializer
+
+
+
+@api_view(['POST'])
+def NewDayLog(request):
+    if request.method == 'POST':
+        print(request.data) 
+        new_day = Day.objects.create(
+            user=request.user,
+            day=str(datetime.now())[0:10],
+            activity = request.data['activity'],
+            notes = request.data['notes']
+        )
+        return render(request, 'index.html')

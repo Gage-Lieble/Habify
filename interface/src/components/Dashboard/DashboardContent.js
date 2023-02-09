@@ -1,5 +1,5 @@
 import QuotesRender from "./quotes/QuotesRender"
-import Calendar from "./Logger/Calendar"
+import Calendar from "./Calendar/Calendar"
 import UserContext from "../../context/user-context"
 import React, {useContext} from "react"
 

@@ -1,16 +1,16 @@
-import Day from "./Day"
+
 import axios from "axios"
 import { useEffect, useState, useContext, useRef } from "react"
 import UserContext from "../../../context/user-context"
 import { ActivityCalendar } from 'activity-calendar-react'
-
+import DayActivityForm from "../Forms/DayActivityForm"
 const Calendar = () => {
 
     const user = useContext(UserContext)
 
     // Api
     const [days, setDays] = useState([])
-    useEffect(() => {
+    const getUserDays = () => {
         axios.get('api/log/').then(res => {
             for(let day of res.data){
                 if (day.user === user){
@@ -19,8 +19,10 @@ const Calendar = () => {
             }
 
         })
-
-    }, [setDays])
+    }
+    useEffect(() => {
+        getUserDays()
+    }, [])
 
     // Calendar package
     const colorCustomization = {
@@ -44,6 +46,7 @@ const Calendar = () => {
     return (
         <>
         {actCal}
+        <DayActivityForm resetform={getUserDays}/>
         </>
     )
 }
