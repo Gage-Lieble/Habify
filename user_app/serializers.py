@@ -13,4 +13,4 @@ class DayLogSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField(read_only=True)
     class Meta:
         model = Day
-        fields = ('user', 'date', 'result' ,'notes')
+        fields = ('user', 'day', 'activity' ,'notes')

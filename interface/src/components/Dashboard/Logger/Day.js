@@ -7,9 +7,9 @@ const Day = (props) => {
         <>
         <div>
             Name: {props.user}
-            Date: {props.date}
+            Date: {props.day}
             Notes: {props.notes}
-            Result: {props.result.toString()}
+            Result: {props.activity}
         </div>
         </>
     )
