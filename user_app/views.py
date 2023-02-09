@@ -14,7 +14,7 @@ from .serializers import *
 from django.contrib.auth import authenticate, login, logout
 from django.middleware.csrf import get_token
 # Extra
-from datetime import datetime 
+from datetime import datetime, timedelta
 
 def landing(request):
     return render(request, 'index.html')
@@ -74,6 +74,8 @@ class DayLogView(generics.ListAPIView):
 def NewDayLog(request):
     if request.method == 'POST':
         activity = request.data['activity']
+        yesterdays_date = str(datetime.now() + timedelta(days=-1))[0:10]
+        print(yesterdays_date)
         new_day = Day.objects.create(
             user=request.user,
             day=str(datetime.now())[0:10],
@@ -81,18 +83,18 @@ def NewDayLog(request):
             notes = request.data['notes']
         )
         user_profile = Profile.objects.get(user=request.user)
-        print(user_profile)
-        if activity == 5:
-            user_profile.streak += 1
-            user_profile.coins += 50
-            user_profile.last_updated = datetime.now()
-            user_profile.save()
-        elif activity == 1:
+        print(user_profile.last_updated)
+        if activity == 1 or yesterdays_date != str(user_profile.last_updated):
             user_profile.streak = 0
             if user_profile.coins - 10 < 0:
                 user_profile.coins = 0
             else:
                 user_profile.coins -= 10
+            user_profile.last_updated = datetime.now()
+            user_profile.save()
+        elif activity == 5:
+            user_profile.streak += 1
+            user_profile.coins += 50
             user_profile.last_updated = datetime.now()
             user_profile.save()
         return render(request, 'index.html')
