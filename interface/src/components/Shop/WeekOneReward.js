@@ -21,7 +21,7 @@ const WeekOneReward = () => {
 
     return (
         <>
-        <img src="https://static.vecteezy.com/system/resources/previews/001/198/620/original/gift-png.png" alt="present" />
+        <img src="" alt="present" />
         <p>$350</p>
         <button onClick={clickFunc}>Buy</button>
         </>

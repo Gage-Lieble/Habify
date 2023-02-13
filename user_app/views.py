@@ -84,10 +84,11 @@ def NewDayLog(request):
         print(len(user_days))
         if activity == 1 or yesterdays_date != str(user_profile.last_updated) and len(user_days) > 1: # checks if a day was missed or for unsober and if its users first log
             user_profile.streak = 0
-            if user_profile.coins - 10 < 0:
-                user_profile.coins = 0
-            else:
-                user_profile.coins -= 10
+            if activity == 1: # ensures coins are only affected when unsober
+                if user_profile.coins - 10 < 0:
+                    user_profile.coins = 0
+                else:
+                    user_profile.coins -= 10
             user_profile.last_updated = datetime.now()
             user_profile.save()
         elif activity == 5:
