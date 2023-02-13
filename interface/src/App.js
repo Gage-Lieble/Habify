@@ -1,6 +1,6 @@
 import ToggleFormBtn from './components/Accounts/ToggleFormBtn'
 import DashboardContent from './components/Dashboard/DashboardContent'
-import ShopContent from './components/Shop/ShopContent'
+
 import UserContext from './context/user-context'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{user:loggedUser}}>
         {content}
-      <ShopContent />
+      
       </UserContext.Provider>
         </div>
   );

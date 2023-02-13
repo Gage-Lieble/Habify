@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework import generics
 from .serializers import *
 from .models import *
+from user_app.models import *
 # Create your views here.
 
 
@@ -14,12 +15,16 @@ class Shop(generics.ListAPIView):
 def BuyReward(request):
     if request.method == "POST":
         print(request.data)
-
+        price = request.data['price']
         customer = User.objects.get(username=request.data['user'])
-
-        reward = RewardsShop.objects.create(
-            price = request.data['price'],
-            img = request.data['img'],
-            user = customer
-        )
+        profile = Profile.objects.get(user=customer)
+        print(profile.coins, '=========')
+        if int(profile.coins) >= price:
+            profile.coins -= price
+            reward = RewardsShop.objects.create(
+                price = price,
+                img = request.data['img'],
+                user = customer
+            )
+            profile.save()
     return render(request, 'index.html')

@@ -4,6 +4,7 @@ import UserContext from "../../context/user-context"
 import React, {useContext, useEffect, useState} from "react"
 import axios from "axios"
 import HeaderCont from "./Header/HeaderCont"
+import ShopContent from '../Shop/ShopContent'
 const DashboardContent = () => {
     const user = useContext(UserContext)
     const [profile, setProfile] = useState({})
@@ -20,8 +21,8 @@ const DashboardContent = () => {
     console.log(profile)
     
     return (
-        // <UserContext.Provider value={{}}>
-        <>
+        <UserContext.Provider value={{user:user.user, coins: profile.coins}}>
+        
             {/* <QuotesRender /> */}
             <HeaderCont />
             <Calendar />
@@ -29,8 +30,8 @@ const DashboardContent = () => {
 
             Coins: {profile.coins}<br/>
             Streak: {profile.streak}
-        </>
-        // </UserContext.Provider>
+            <ShopContent />
+        </UserContext.Provider>
 
     )
 }
