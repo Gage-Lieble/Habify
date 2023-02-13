@@ -4,13 +4,10 @@ import React, {useEffect, useState} from 'react'
 
 const LoginForm = () => {
 
-    let usernameHtml = document.getElementById('username').value
     const [csrfToken, setCsrfToken] = useState()
-    const [username, setUsername] = useState()
-
     useEffect(() => {
         axios.get('api/csrf').then(res => setCsrfToken(res.data.csrfToken))
-        setUsername(usernameHtml)
+    
     }, [])
 
     
@@ -27,8 +24,6 @@ const LoginForm = () => {
             headers: {'X-CSRFToken': csrfToken}
         }).then(function(res){
             console.log(res)
-            usernameHtml = e.target.user.value
-            setUsername(usernameHtml)
             window.location.reload();
         }
         ).catch(function(err){

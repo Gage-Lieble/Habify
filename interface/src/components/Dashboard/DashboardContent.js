@@ -1,8 +1,9 @@
-import QuotesRender from "./quotes/QuotesRender"
+
 import Calendar from "./Calendar/Calendar"
 import UserContext from "../../context/user-context"
 import React, {useContext, useEffect, useState} from "react"
 import axios from "axios"
+import HeaderCont from "./Header/HeaderCont"
 const DashboardContent = () => {
     const user = useContext(UserContext)
     const [profile, setProfile] = useState({})
@@ -14,17 +15,17 @@ const DashboardContent = () => {
                 }
             }
         })
-    },[setProfile])
+    },[setProfile, user])
 
     console.log(profile)
     
     return (
         // <UserContext.Provider value={{}}>
         <>
-        
-            <QuotesRender />
+            {/* <QuotesRender /> */}
+            <HeaderCont />
             <Calendar />
-            <a href="/api/logout/">Logout {user.user}</a>
+            <a className="link-log" href="/api/logout/">Logout {user.user}</a><br />
 
             Coins: {profile.coins}<br/>
             Streak: {profile.streak}

@@ -1,5 +1,6 @@
 import ToggleFormBtn from './components/Accounts/ToggleFormBtn'
 import DashboardContent from './components/Dashboard/DashboardContent'
+import ShopContent from './components/Shop/ShopContent'
 import UserContext from './context/user-context'
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={{user:loggedUser}}>
-        <h2>Soberize</h2>
         {content}
+      <ShopContent />
       </UserContext.Provider>
         </div>
   );

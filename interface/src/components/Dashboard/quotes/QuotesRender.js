@@ -4,10 +4,7 @@ const QuotesRender = () => {
 
     const [quote, setQuote] = useState()
 
-    useEffect(() => {
-        genQuotes()
-    },[genQuotes])
-
+    
     const genQuotes = () => {
         axios.get('https://type.fit/api/quotes').then(res => {
             let randQuote = res.data[Math.floor(Math.random() * res.data.length)]
@@ -16,8 +13,11 @@ const QuotesRender = () => {
             }
             let finalQuote = `${randQuote.text} - ${randQuote.author}`
             setQuote(finalQuote)
-    })
+        })
     }
+    useEffect(() => {
+        genQuotes()
+    },[])
     return(
         
         <div>

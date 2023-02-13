@@ -21,9 +21,7 @@ def landing(request):
 
 
 # Accounts
-class UserView(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+
 
 @api_view(['POST'])
 def CreateUser(request):
@@ -63,7 +61,6 @@ def get_csrf(request):
 
 
 # Calendar
-
 class DayLogView(generics.ListAPIView):
     queryset = Day.objects.all()
     serializer_class = DayLogSerializer

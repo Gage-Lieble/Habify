@@ -5,9 +5,46 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
-
+html{
+  overflow-x: hidden;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.link-log{
+  background-color: red;
+}
+
+
+#navbar{
+  width: 100vw;
+  height: 75px;
+  padding: 0px 15px 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: pink;
+}
+
+.r-nav{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 50px;
+  justify-content: space-around;
+  /* background-color: lightpink; */
+
+}
+
+/* #calendar-wrap{
+  width: 100vw;
+  overflow-x: scroll;
+}
+
+.ac-item{
+  width: 22px !important;
+  height: 22px !important;
+} */
