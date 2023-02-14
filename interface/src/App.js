@@ -14,7 +14,6 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{user:loggedUser}}>
         {content}
-      
       </UserContext.Provider>
         </div>
   );

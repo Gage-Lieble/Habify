@@ -5,6 +5,7 @@ import React, {useContext, useEffect, useState} from "react"
 import axios from "axios"
 import HeaderCont from "./Header/HeaderCont"
 import ShopContent from '../Shop/ShopContent'
+import Inventory from "../Inventory/Inventory"
 const DashboardContent = () => {
     const user = useContext(UserContext)
     const [profile, setProfile] = useState({})
@@ -17,20 +18,29 @@ const DashboardContent = () => {
             }
         })
     },[setProfile, user])
-
-    console.log(profile)
     
+    const [innerCont, setInnerCont] = useState(<Calendar />)
+    const togglePageFunc = (page) => {
+        if (page === 'cal'){
+            setInnerCont(<Calendar />)
+        }else if (page === 'shop'){
+            setInnerCont(<ShopContent />)
+        }else if (page === 'inv'){
+            setInnerCont(<Inventory />)
+        }
+    }
+
     return (
         <UserContext.Provider value={{user:user.user, coins: profile.coins}}>
         
             {/* <QuotesRender /> */}
-            <HeaderCont />
-            <Calendar />
+            <HeaderCont togglePage={togglePageFunc}/>
             <a className="link-log" href="/api/logout/">Logout {user.user}</a><br />
 
             Coins: {profile.coins}<br/>
             Streak: {profile.streak}
-            <ShopContent />
+            
+            {innerCont}
         </UserContext.Provider>
 
     )

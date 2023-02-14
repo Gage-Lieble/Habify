@@ -7,6 +7,10 @@ from user_app.models import *
 # Create your views here.
 
 
+class RewardsView(generics.ListAPIView):
+    queryset = Rewards.objects.all()
+    serializer_class = ShopSerializer
+
 @api_view(['POST'])
 def BuyReward(request):
     if request.method == "POST":
@@ -17,10 +21,11 @@ def BuyReward(request):
         print(profile.coins, '=========')
         if int(profile.coins) >= price:
             profile.coins -= price
-            reward = RewardsShop.objects.create(
+            reward = Rewards.objects.create(
                 price = price,
                 img = request.data['img'],
-                user = customer
+                user = customer,
+                title = request.data['title']
             )
             profile.save()
     return render(request, 'index.html')

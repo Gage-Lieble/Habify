@@ -3,5 +3,6 @@ from . import views
 app_name = 'rewards_app'
 
 urlpatterns = [
-    path('buyreward/', views.BuyReward)
+    path('api/rewards/', views.RewardsView.as_view()),
+    path('buyreward/', views.BuyReward),
 ]
