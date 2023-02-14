@@ -10,47 +10,84 @@ const Calendar = () => {
 
     // Api
     const [days, setDays] = useState([])
-    const getUserDays = () => {
+    useEffect(() => {
         axios.get('api/log/').then(res => {
             for(let day of res.data){
-                if (day.user === user){
+                if (day.user === user.user){
                     setDays((prev) => { return [day, ...prev]})
                 } 
             }
 
         })
-    }
-    useEffect(() => {
-        getUserDays()
-    }, [])
+    }, [user])
 
     // Calendar package
-    const colorCustomization = {
-        activity0: '#dadada',
-        activity1: '#ED2939',
-        activity2: '#006d32',
-        activity3: '#26a641',
-        activity4: '#50C878',
-      }
     const didMount = useRef(false)
     const [actCal, setActCal] = useState()
     useEffect(() => {
-        if(didMount.current){
-            setActCal(<ActivityCalendar sampleData={days} showMonth={true} colorCustomization={colorCustomization} />)
-
-        }else{
+        const colorCustomization = {
+            activity0: '#dadada',
+            activity1: '#ED2939',
+            activity2: '#006d32',
+            activity3: '#26a641',
+            activity4: '#50C878',
+          }
+          if(didMount.current){
+            setActCal(<ActivityCalendar id="calendar" sampleData={days} showMonth={true} colorCustomization={colorCustomization} />)
+            
+          }else{
             didMount.current = true
-        }
-    },[days, makeCal])
-
-
-
-    return (
-        <>
-        {actCal}
+          }
+        },[days])
+        
+        
+        
+        return (
+          <>
+        <div id="calendar-wrap">
+            {actCal}
+        </div>
         <DayActivityForm />
+        
         </>
     )
 }
 
 export default Calendar
+          // let testdata = [{
+          //   day: "2023-01-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-02-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-03-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-04-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-05-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-06-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-07-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-08-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-09-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-10-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-11-01",
+          //   activity: 5
+          // },{
+          //   day: "2023-12-01",
+          //   activity: 5
+          // },]
