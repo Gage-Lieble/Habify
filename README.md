@@ -43,7 +43,7 @@ You should now have all the project files as well as 2 files, one called **"requ
 
 ---
 
-2. You may want a virtual environment to house all the packages that are about to be installed. Todo so use the command ```python -m venv venv``` followed by ```venv\Scripts\activate```, that will create & activate the virtual environment. For more info ([Realpython.com](https://realpython.com/python-virtual-environments-a-primer)).
+2. You may want a virtual environment to house all the packages that you're about to installed. Todo so use the command ```python -m venv venv``` followed by ```venv\Scripts\activate```, that will create & activate the virtual environment. For more info ([Realpython.com](https://realpython.com/python-virtual-environments-a-primer)).
 
 ---
 
