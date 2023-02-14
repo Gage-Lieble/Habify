@@ -21,8 +21,8 @@ Data that is stored in a SQLite database
  ## Todo
  MVP
  - [X] User account system
- - [ ] User dashboard
- - [ ] Calendar
+ - [X] User dashboard
+ - [X] Calendar
  
  More features
  - [ ] User reward system (shop)
