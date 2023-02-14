@@ -22,7 +22,7 @@ Data that is stored in a SQLite database
  ## Todo
  MVP
  - [X] Registration system.
- - [X] Dynamic dashboard (themes, badges).
+ - [ ] Dashboard type interface.
  - [X] Calendar.
  
  More features...
