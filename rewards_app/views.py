@@ -7,10 +7,6 @@ from user_app.models import *
 # Create your views here.
 
 
-class Shop(generics.ListAPIView):
-    queryset = RewardsShop.objects.all()
-    serializer_class = ShopSerializer
-
 @api_view(['POST'])
 def BuyReward(request):
     if request.method == "POST":
