@@ -5,6 +5,7 @@ import React, {useContext, useEffect, useState} from "react"
 import axios from "axios"
 import HeaderCont from "./Header/HeaderCont"
 import ShopContent from '../Shop/ShopContent'
+import Inventory from "../Inventory/Inventory"
 const DashboardContent = () => {
     const user = useContext(UserContext)
     const [profile, setProfile] = useState({})
@@ -26,11 +27,19 @@ const DashboardContent = () => {
             setInnerCont(<Calendar cal="cal" />)
         }
     }
+
+    const toggleInvFunc = () => {
+        if (innerCont.props.cal !== undefined){
+            setInnerCont(<Inventory />)
+        }else{
+            setInnerCont(<Calendar cal="cal" />)
+        }
+    }
     return (
         <UserContext.Provider value={{user:user.user, coins: profile.coins}}>
         
             {/* <QuotesRender /> */}
-            <HeaderCont toggleShop={toggleShopFunc} />
+            <HeaderCont toggleShop={toggleShopFunc} toggleInv={toggleInvFunc}/>
             <a className="link-log" href="/api/logout/">Logout {user.user}</a><br />
 
             Coins: {profile.coins}<br/>

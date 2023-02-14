@@ -3,12 +3,13 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class RewardsShop(models.Model):
+class Rewards(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     price = models.IntegerField(default=350)
     img = models.CharField(max_length=999)
+    title = models.CharField(max_length=50)
     def __str__(self):
-        return f"{self.user}-{self.price}-{self.img}"
+        return f"{self.user}-{self.title}-{self.price}-{self.img}"
 
 class StreakBadge(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

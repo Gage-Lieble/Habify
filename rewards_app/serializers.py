@@ -5,7 +5,7 @@ from .models import *
 
 
 class ShopSerializer(serializers.ModelSerializer):
-    # user = serializers.StringRelatedField(read_only=True)
+    user = serializers.StringRelatedField(read_only=True)
     class Meta:
-        model = RewardsShop
+        model = Rewards
         fields = ('__all__')

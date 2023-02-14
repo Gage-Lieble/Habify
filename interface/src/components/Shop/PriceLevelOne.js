@@ -24,7 +24,8 @@ const PriceLevelOne = (props) => {
         axios.post('rewards/buyreward/', {
             user: user.user,
             price: rewardTotal,
-            img: props.image
+            img: props.image,
+            title: props.name
         },{
             headers: {'X-CSRFToken': csrfToken}
         }).then(res => console.log(res))
