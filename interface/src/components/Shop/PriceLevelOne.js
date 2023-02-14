@@ -33,6 +33,7 @@ const PriceLevelOne = (props) => {
     return (
         <>
         <img src={props.image} alt="present" />
+        <h3>{props.name}</h3>
         <p>$350</p>
         <button onClick={clickFunc} disabled={disabled}>Buy</button>
         </>
