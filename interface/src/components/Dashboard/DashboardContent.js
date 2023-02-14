@@ -36,8 +36,6 @@ const DashboardContent = () => {
             {/* <QuotesRender /> */}
             <HeaderCont togglePage={togglePageFunc}/>
             <a className="link-log" href="/api/logout/">Logout {user.user}</a><br />
-
-            Coins: {profile.coins}<br/>
             Streak: {profile.streak}
             
             {innerCont}
