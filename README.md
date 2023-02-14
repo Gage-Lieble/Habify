@@ -7,7 +7,7 @@
 > Sobriety tracking app to assist users with any habit
 
 ## Project outline
-Soberize is a sobriety tracking app. Users have the ability to create accounts, track days that they have reframed from doing their habit, and get digital rewards for coins gained through daily use. After creating an account, users will have their own dashboard with a calendar along with their streak. The streak measures how many weeks the user has lasted, and resets after one "fail". Hitting streak milestones will apply a coin multiplyer increasing the gain of daily coins. This calendar also comes a daily form that will ask the user if they were successful! 
+Soberize is a sobriety/habit tracking app. Users have the ability to create accounts, track days that they have reframed from doing their bad habit, and get digital rewards for coins gained through daily use. After creating an account, users will have their own dashboard with a calendar along with their streak. The streak measures how many weeks the user has lasted, and resets after one "fail". Hitting streak milestones will apply a coin multiplyer increasing the gain of daily coins. This calendar also comes a daily form that will ask the user if they were successful! 
 Other pages include *The Shop*, *Purchased*. 
 
 ## Data model
