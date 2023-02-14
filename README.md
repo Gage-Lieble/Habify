@@ -25,14 +25,16 @@ Data that is stored in a SQLite database
  - [X] Calendar
  
  More features
- - [ ] User reward system (shop)
+ - [X] User reward system (shop)
  - [ ] User badge system (measures the longest streak)
  - [ ] User sober streaks
  - [ ] Weekly progress bar
  - [X] Motivational quotes
  - [ ] Sober streak reward animation
  - [ ] Ability to save quotes
+ - [ ] Style finalizations
  - [ ] Add requierments.txt & package.json (npm install --save my-dependency) for install
+ - [ ] Deploy
 
 ## How to install locally
 1. Clone this repo into a folder on your machine ([Github docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)).
