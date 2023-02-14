@@ -43,11 +43,11 @@ You should now have all the project files as well as 2 files, one called **"requ
 
 ---
 
-2. You may want a virtual environment to house all the packages that you're about to installed. Todo so use the command ```python -m venv venv``` followed by ```venv\Scripts\activate```, that will create & activate the virtual environment. For more info ([Realpython.com](https://realpython.com/python-virtual-environments-a-primer)).
+2. You may want a virtual environment to house all the packages that you're about to install. Todo so use the command ```python -m venv venv``` followed by ```venv\Scripts\activate```, that will create & activate the virtual environment. For more info ([Realpython.com](https://realpython.com/python-virtual-environments-a-primer)).
 
 ---
 
-3. To install the backend portion of this app, with the command line pointed to the same directory as requirments.txt, use command ```pip install -r requirements.txt```. You should now have django in addition to all the other python packages installed.
+3. To install the backend portion of this app point the command line to the same directory as requirments.txt and use command ```pip install -r requirements.txt```. You should now have django in addition to all the other python packages installed.
 
 ---
 
