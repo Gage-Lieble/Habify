@@ -24,7 +24,7 @@ Other pages include *The Shop*, *Purchased*.
  ## Todo
  MVP
  - [X] Registration system.
- - [ ] Dashboard type interface.
+ - [X] Single page dashboard interface.
  - [X] Calendar.
  
  More features...
@@ -32,7 +32,7 @@ Other pages include *The Shop*, *Purchased*.
  - [X] Streaks measured daily.
  - [X] Daily coin gain.
  - [X] Milestones apply multiplyers to coin gain.
- - [ ] Weekly progress bar.
+ - [ ] Milestone progress bar.
  - [ ] Dev mode, Unlimited coins and streak levels.
  - [ ] Streak milestone animation.
  - [ ] Add requierments.txt.
