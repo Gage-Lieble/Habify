@@ -18,28 +18,23 @@ const DashboardContent = () => {
             }
         })
     },[setProfile, user])
-
-    const [innerCont, setInnerCont] = useState(<Calendar cal="cal" />)
-    const toggleShopFunc = () => {
-        if (innerCont.props.cal !== undefined){
+    
+    const [innerCont, setInnerCont] = useState(<Calendar />)
+    const togglePageFunc = (page) => {
+        if (page === 'cal'){
+            setInnerCont(<Calendar />)
+        }else if (page === 'shop'){
             setInnerCont(<ShopContent />)
-        }else{
-            setInnerCont(<Calendar cal="cal" />)
+        }else if (page === 'inv'){
+            setInnerCont(<Inventory />)
         }
     }
 
-    const toggleInvFunc = () => {
-        if (innerCont.props.cal !== undefined){
-            setInnerCont(<Inventory />)
-        }else{
-            setInnerCont(<Calendar cal="cal" />)
-        }
-    }
     return (
         <UserContext.Provider value={{user:user.user, coins: profile.coins}}>
         
             {/* <QuotesRender /> */}
-            <HeaderCont toggleShop={toggleShopFunc} toggleInv={toggleInvFunc}/>
+            <HeaderCont togglePage={togglePageFunc}/>
             <a className="link-log" href="/api/logout/">Logout {user.user}</a><br />
 
             Coins: {profile.coins}<br/>

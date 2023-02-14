@@ -17,8 +17,6 @@ const Inventory = () => {
             }
         })
     },[setUserRewards, user])
-
-    console.log(userRewards)
     return (
         <>
         <h3>This is Inventory</h3>
