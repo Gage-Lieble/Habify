@@ -42,6 +42,9 @@ def CreateUser(request):
         badge = StreakBadge.objects.create(
             user=user,
         )
+
+        log_user = authenticate(username=request.data['username'], password=request.data['password'])
+        login(request, log_user)
         return render(request, 'index.html')
 
 @api_view(['POST'])
@@ -89,6 +92,9 @@ def NewDayLog(request):
 
         if activity == 1 or yesterdays_date != str(user_profile.last_updated) and len(user_days) > 1: # checks if a day was missed or for unsober and if its users first log
             user_profile.streak = 0
+            user_badge.weeks = 0
+            user_badge.color = "#ffffff"
+            user_badge.multiplyer = 1
             if activity == 1: # ensures coins are only affected when unsober
                 if user_profile.coins - 10 < 0:
                     user_profile.coins = 0
@@ -96,6 +102,7 @@ def NewDayLog(request):
                     user_profile.coins -= 10
             user_profile.last_updated = datetime.now()
             user_profile.save()
+            user_badge.save()
         elif activity == 5:
 
             user_profile.streak += 1

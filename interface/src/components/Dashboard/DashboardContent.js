@@ -18,19 +18,25 @@ const DashboardContent = () => {
         })
     },[setProfile, user])
 
-    console.log(profile)
-    
+    const [innerCont, setInnerCont] = useState(<Calendar cal="cal" />)
+    const toggleShopFunc = () => {
+        if (innerCont.props.cal !== undefined){
+            setInnerCont(<ShopContent />)
+        }else{
+            setInnerCont(<Calendar cal="cal" />)
+        }
+    }
     return (
         <UserContext.Provider value={{user:user.user, coins: profile.coins}}>
         
             {/* <QuotesRender /> */}
-            <HeaderCont />
-            <Calendar />
+            <HeaderCont toggleShop={toggleShopFunc} />
             <a className="link-log" href="/api/logout/">Logout {user.user}</a><br />
 
             Coins: {profile.coins}<br/>
             Streak: {profile.streak}
-            <ShopContent />
+            
+            {innerCont}
         </UserContext.Provider>
 
     )
