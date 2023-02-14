@@ -2,7 +2,7 @@ import axios from "axios"
 import UserContext from "../../context/user-context"
 import { useContext, useEffect, useState } from "react"
 
-const WeekOneReward = () => {
+const PriceLevelOne = (props) => {
     const rewardTotal = 350
 
     // Auth
@@ -20,13 +20,11 @@ const WeekOneReward = () => {
         }
 
     }, [setDisabled, user])
-    console.log(Number(user.coins) >= rewardTotal)
-    console.log(disabled, '+++')
     const clickFunc =() => {
         axios.post('rewards/buyreward/', {
             user: user.user,
             price: rewardTotal,
-            img: 'https://static.vecteezy.com/system/resources/previews/001/198/620/original/gift-png.png'
+            img: props.image
         },{
             headers: {'X-CSRFToken': csrfToken}
         }).then(res => console.log(res))
@@ -34,11 +32,11 @@ const WeekOneReward = () => {
 
     return (
         <>
-        <img src="" alt="present" />
+        <img src={props.image} alt="present" />
         <p>$350</p>
         <button onClick={clickFunc} disabled={disabled}>Buy</button>
         </>
     )
 }
 
-export default WeekOneReward
+export default PriceLevelOne
