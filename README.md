@@ -33,6 +33,7 @@ Other pages include *The Shop*, *Purchased*.
  - [X] Daily coin gain.
  - [X] Milestones apply multiplyers to coin gain.
  - [ ] Milestone progress bar.
+ - [X] Plot milestone dates
  - [ ] Dev mode, Unlimited coins and streak levels.
  - [ ] Streak milestone animation.
  - [ ] Add requierments.txt.
