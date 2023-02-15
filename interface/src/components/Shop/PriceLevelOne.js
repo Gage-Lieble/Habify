@@ -20,7 +20,9 @@ const PriceLevelOne = (props) => {
         }
 
     }, [setDisabled, user])
-    const clickFunc =() => {
+
+   
+    const buyFunc =() => {
         axios.post('rewards/buyreward/', {
             user: user.user,
             price: rewardTotal,
@@ -28,7 +30,10 @@ const PriceLevelOne = (props) => {
             title: props.name
         },{
             headers: {'X-CSRFToken': csrfToken}
-        }).then(res => console.log(res))
+        }).then(res => {
+            console.log(res)
+            props.setWallet(rewardTotal)
+        })
     }
 
     return (
@@ -36,7 +41,7 @@ const PriceLevelOne = (props) => {
         <img src={props.image} alt="present" />
         <h3>{props.name}</h3>
         <p>$350</p>
-        <button onClick={clickFunc} disabled={disabled}>Buy</button>
+        <button onClick={buyFunc} disabled={disabled}>Buy</button>
         </>
     )
 }

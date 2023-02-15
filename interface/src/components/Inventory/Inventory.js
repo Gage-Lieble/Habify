@@ -9,7 +9,6 @@ const Inventory = () => {
     const [userRewards, setUserRewards] = useState([])
     useEffect(() => {
         axios.get('rewards/api/rewards/').then(res => {
-            console.log(res.data)
             for (let reward of res.data){
                 if (reward.user === user.user){
                     setUserRewards(prev => [...prev, reward])
