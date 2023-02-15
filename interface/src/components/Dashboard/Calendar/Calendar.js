@@ -5,31 +5,70 @@ import UserContext from "../../../context/user-context"
 import { ActivityCalendar } from 'activity-calendar-react'
 import DayActivityForm from "../Forms/DayActivityForm"
 const Calendar = () => {
-
-    const user = useContext(UserContext)
-
+  
+  const user = useContext(UserContext)
+  
     // Api
+    const [milestones, setMilestones] = useState([])
     const [days, setDays] = useState([])
     useEffect(() => {
-        axios.get('api/log/').then(res => {
-            for(let day of res.data){
-                if (day.user === user.user){
-                    setDays((prev) => { return [day, ...prev]})
-                } 
+      
+      axios.get('api/log/').then(res => {
+        for(let day of res.data){
+          if (day.user === user.user){
+            setDays((prev) => { return [day, ...prev]})
+          } 
+        }
+        
+        return res
+        
+      }).then(res => {
+        console.log(res)
+        let startDate = null
+        
+        for(let day of res.data){
+          if (day.user === user.user){
+            startDate = new Date(day.day)
+            break
+          } 
+          }
+          console.log(startDate)
+          let week = new Date()
+          week.setDate(startDate.getDate() + 6) // days 1 less since it doesnt count first entry
+          let month = new Date()
+          month.setDate(startDate.getDate() + 27)
+          let thrMonth = new Date()
+          thrMonth.setDate(startDate.getDate() + 90)
+          let sixMonth = new Date()
+          sixMonth.setDate(startDate.getDate() + 181)
+          let ninMonth = new Date()
+          ninMonth.setDate(startDate.getDate() + 272)
+          let oneYear = new Date()
+          oneYear.setDate(startDate.getDate() + 364)
+          // may have to slice date
+          let milestonesPoints = [{user: user.user, day:week.toISOString().slice(0,10), activity:3, notes:'week'},{user: user.user, day:month.toISOString().slice(0,10), activity:3, notes:'month'},{user: user.user, day:thrMonth.toISOString().slice(0,10), activity:3, notes:'thrMonth'},{user: user.user, day:sixMonth.toISOString().slice(0,10), activity:3, notes:'sixMonth'},{user: user.user, day:ninMonth.toISOString().slice(0,10), activity:3, notes:'ninMonth'},{user: user.user, day:oneYear.toISOString().slice(0,10), activity:3, notes:'oneYear'},]
+          for (let ms of milestonesPoints){
+            if (ms.day[3] > milestonesPoints[0].day[3]){
+                ms.activity = 2
             }
-
+            setDays((prev) => {return [ms,...prev]})
+          }
         })
-    }, [user])
-
+        
+      }, [user])
+      
+      
+      
+      
     // Calendar package
     const didMount = useRef(false)
     const [actCal, setActCal] = useState()
     useEffect(() => {
         const colorCustomization = {
             activity0: '#dadada',
-            activity1: '#ED2939',
-            activity2: '#006d32',
-            activity3: '#26a641',
+            activity1: '#ffffff',
+            activity2: '#FFC0CB',
+            activity3: '#A020F0',
             activity4: '#50C878',
           }
           if(didMount.current){
@@ -40,6 +79,7 @@ const Calendar = () => {
           }
         },[days])
         
+        console.log(days)
         
         
         return (
@@ -52,7 +92,6 @@ const Calendar = () => {
         </>
     )
 }
-
 export default Calendar
           // let testdata = [{
           //   day: "2023-01-01",
