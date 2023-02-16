@@ -1,6 +1,7 @@
 import axios from "axios"
 import UserContext from "../../context/user-context"
 import { useContext, useEffect, useState } from "react"
+import RewardCard from "./RewardCard"
 
 const PriceLevelOne = (props) => {
     const rewardTotal = 350
@@ -38,11 +39,8 @@ const PriceLevelOne = (props) => {
 
     return (
         <>
-        <img src={props.image} alt="present" />
-        <h3>{props.name}</h3>
-        <p>$350</p>
-        <button onClick={buyFunc} disabled={disabled}>Buy</button>
-        </>
+        <RewardCard img={props.image} name={props.name} price={'$350'} func={buyFunc}/>
+            </>
     )
 }
 

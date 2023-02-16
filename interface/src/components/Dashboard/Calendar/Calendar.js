@@ -84,7 +84,7 @@ const Calendar = () => {
         
         return (
           <>
-            <h3 className="page-title">Calendar</h3>
+            <h2 className="page-title">Calendar</h2>
             <div id="calendar-wrap">
                 {actCal}
             </div>
