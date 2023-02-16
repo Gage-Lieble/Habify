@@ -24,10 +24,13 @@ const DayActivityForm = (props) => {
 
     }
     return (
-        <form onSubmit={formHandler}>
-            <button onClick={() => setSober(5)} type="button">Sober</button>
-            <button onClick={() => setSober(1)} type="button">unSober</button>
-            <textarea id="notes" placeholder="notes..."></textarea>
+        <form onSubmit={formHandler} id="daily-form">
+            <h2 id="form-date">{new Date().toLocaleDateString()}</h2>
+            <span id="daily-btn-wrap">
+                <button onClick={() => setSober(5)} type="button" className="form-opt">Pass</button>
+                <button onClick={() => setSober(1)} type="button" className="form-opt">Fail</button>
+            </span>
+            <textarea id="notes" placeholder="Notes:"></textarea>
             <input type="submit" />
         </form>
     )

@@ -35,10 +35,12 @@ const DashboardContent = () => {
         
             {/* <QuotesRender /> */}
             <HeaderCont togglePage={togglePageFunc}/>
-            <a className="link-log" href="/api/logout/">Logout {user.user}</a><br />
-            Streak: {profile.streak}
-            
-            {innerCont}
+
+            {/* <a className="link-log" href="/api/logout/">Logout {user.user}</a><br />
+            Streak: {profile.streak} */}
+            <div id="content-wrap">
+                {innerCont}
+            </div>
         </UserContext.Provider>
 
     )
