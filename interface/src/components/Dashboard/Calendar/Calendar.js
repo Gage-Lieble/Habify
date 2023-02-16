@@ -4,7 +4,7 @@ import { useEffect, useState, useContext, useRef } from "react"
 import UserContext from "../../../context/user-context"
 import { ActivityCalendar } from 'activity-calendar-react'
 import DayActivityForm from "../Forms/DayActivityForm"
-const Calendar = () => {
+const Calendar = (props) => {
   
   const user = useContext(UserContext)
   
@@ -83,18 +83,18 @@ const Calendar = () => {
         
         
         return (
-          <>
+          <div id="calendarpg-wrap">
             <h2 className="page-title">Calendar</h2>
             <div id="calendar-wrap">
                 {actCal}
             </div>
             <div id="mods-wrap">
-              <h4>Streak: 7 days</h4>
+              <h4>Streak: {props.streak} days</h4>
               <h4>Multiplyer: x1.25</h4>
             </div>
             <DayActivityForm />
         
-        </>
+        </div>
     )
 }
 export default Calendar

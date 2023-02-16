@@ -39,9 +39,15 @@ const PriceLevelOne = (props) => {
 
     return (
         <>
-        <RewardCard img={props.image} name={props.name} price={'$350'} func={buyFunc}/>
-            </>
+        <RewardCard img={props.image} name={props.name} price={'$350'} func={buyFunc} disabled={disabled}/>
+        </>
     )
 }
 
 export default PriceLevelOne
+
+
+// <img src={props.image} alt="present" />
+// <h3>{props.name}</h3>
+// <p>$350</p>
+// <button onClick={buyFunc} disabled={disabled}>Buy</button>

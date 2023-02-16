@@ -19,17 +19,17 @@ const DashboardContent = () => {
         })
     },[setProfile, user])
     
-    const [innerCont, setInnerCont] = useState(<Calendar />)
+    const [innerCont, setInnerCont] = useState(<Calendar streak={profile.streak} />)
     const togglePageFunc = (page) => {
         if (page === 'cal'){
-            setInnerCont(<Calendar />)
+            setInnerCont(<Calendar streak={profile.streak} />)
         }else if (page === 'shop'){
             setInnerCont(<ShopContent />)
         }else if (page === 'inv'){
             setInnerCont(<Inventory />)
         }
     }
-
+    console.log(profile)
     return (
         <UserContext.Provider value={{user:user.user, coins: profile.coins}}>
         
