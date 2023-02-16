@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background-color: #F9812A;
 }
 html{
   overflow-x: hidden;
@@ -26,7 +27,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: pink;
+  
 }
 
 .r-nav{
@@ -39,12 +40,67 @@ code {
 
 }
 
-/* #calendar-wrap{
-  width: 100vw;
-  overflow-x: scroll;
+#content-wrap{
+  background-color: white;
+  border-radius: 25px 25px 0px 0px;
+  height: calc(100vh - 75px);
+  padding: 20px;
 }
 
-.ac-item{
+.page-title{
+  margin-top: 0px;
+}
+#calendar-wrap{
+  width: 625px;
+  overflow-x: auto;
+}
+
+#mods-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#mods-wrap>h4{
+  margin: 0px;
+}
+#daily-form{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+
+}
+#daily-btn-wrap{
+  display: flex;
+  justify-content: space-between;
+}
+
+#daily-form>input[type="submit"]{
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid rgb(173, 173, 173);
+}
+#form-date{
+  margin: 0 auto;
+}
+.form-opt{
+  padding: 10px;
+  width: 48%;
+  border-radius: 10px;
+  border: 2px solid rgb(173, 173, 173);
+}
+
+#notes{
+  resize: none;
+  height: 100px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid rgb(173, 173, 173);
+  
+}
+/* .ac-item{
   width: 22px !important;
   height: 22px !important;
-} */
+}  */

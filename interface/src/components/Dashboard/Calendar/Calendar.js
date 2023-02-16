@@ -84,10 +84,15 @@ const Calendar = () => {
         
         return (
           <>
-        <div id="calendar-wrap">
-            {actCal}
-        </div>
-        <DayActivityForm />
+            <h3 className="page-title">Calendar</h3>
+            <div id="calendar-wrap">
+                {actCal}
+            </div>
+            <div id="mods-wrap">
+              <h4>Streak: 7 days</h4>
+              <h4>Multiplyer: x1.25</h4>
+            </div>
+            <DayActivityForm />
         
         </>
     )

@@ -10,8 +10,8 @@ const ShopContent = () => {
     }
     return (
         <>
-        <h3>This is shop</h3>
-        ${wallet}<br />
+        <h3>This is shop ${wallet}</h3>
+        <br />
         <PriceLevelOne image={'/static/imgs/pets/0.png'} name="Aquilance" setWallet={displayWallet} /> <br />
         <PriceLevelOne image={'/static/imgs/pets/1.png'} name="Pyrogriff" setWallet={displayWallet} /> <br />
         <PriceLevelOne image={'/static/imgs/pets/2.png'} name="Draven" setWallet={displayWallet} /><br />
