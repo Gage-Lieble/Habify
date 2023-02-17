@@ -23,7 +23,7 @@ const Calendar = (props) => {
         return res
         
       }).then(res => {
-        console.log(res)
+       
         let startDate = null
         
         for(let day of res.data){
@@ -32,19 +32,19 @@ const Calendar = (props) => {
             break
           } 
           }
-          console.log(startDate)
+          
           let week = new Date()
-          week.setDate(startDate.getDate() + 6) // days 1 less since it doesnt count first entry
+          week.setDate(startDate.getDate() + 7) // days 1 less since it doesnt count first entry
           let month = new Date()
-          month.setDate(startDate.getDate() + 27)
+          month.setDate(startDate.getDate() + 28)
           let thrMonth = new Date()
-          thrMonth.setDate(startDate.getDate() + 90)
+          thrMonth.setDate(startDate.getDate() + 91)
           let sixMonth = new Date()
-          sixMonth.setDate(startDate.getDate() + 181)
+          sixMonth.setDate(startDate.getDate() + 182)
           let ninMonth = new Date()
-          ninMonth.setDate(startDate.getDate() + 272)
+          ninMonth.setDate(startDate.getDate() + 273)
           let oneYear = new Date()
-          oneYear.setDate(startDate.getDate() + 364)
+          oneYear.setDate(startDate.getDate() + 365)
           // may have to slice date
           let milestonesPoints = [{user: user.user, day:week.toISOString().slice(0,10), activity:3, notes:'week'},{user: user.user, day:month.toISOString().slice(0,10), activity:3, notes:'month'},{user: user.user, day:thrMonth.toISOString().slice(0,10), activity:3, notes:'thrMonth'},{user: user.user, day:sixMonth.toISOString().slice(0,10), activity:3, notes:'sixMonth'},{user: user.user, day:ninMonth.toISOString().slice(0,10), activity:3, notes:'ninMonth'},{user: user.user, day:oneYear.toISOString().slice(0,10), activity:3, notes:'oneYear'},]
           for (let ms of milestonesPoints){
@@ -78,9 +78,7 @@ const Calendar = (props) => {
             didMount.current = true
           }
         },[days])
-        
-        console.log(days)
-        
+      
         
         return (
           <div id="calendarpg-wrap">

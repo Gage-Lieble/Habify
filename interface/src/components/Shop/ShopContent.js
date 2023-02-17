@@ -22,6 +22,7 @@ const ShopContent = () => {
         <PriceLevelOne image={'/static/imgs/pets/7.png'} name="Blacno" setWallet={displayWallet} /><br />
         <PriceLevelOne image={'/static/imgs/pets/8.png'} name="Petally" setWallet={displayWallet} /><br />
         <PriceLevelOne image={'/static/imgs/pets/9.png'} name="Skiddo" setWallet={displayWallet} /><br />
+        
         </div>
         </div>
     )

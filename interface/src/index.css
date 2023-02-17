@@ -70,7 +70,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 300px;
+  
 
 }
 
@@ -139,6 +139,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   width: 37%;
   padding:10px;
   border-radius: 10px;
@@ -164,8 +165,35 @@ code {
 }
 
 #shoppg-wrap{
-  padding: 20px 20px 0px 20px;
+  /* padding: 20px 20px 0px 20px;
   height: 100vh;
-  
-  
+   */
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#inventorypg-wrap{
+  padding: 20px;
+}
+
+#inventorypg-wrap>h2{
+  margin-top: 0px;
+}
+
+#inventorypg-wrap>span{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

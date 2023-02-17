@@ -8,7 +8,7 @@ const HeaderCont = (props) => {
             <span className="r-nav">
                 <button className="nav-link" onClick={() => props.togglePage('cal')}><img style={{width: '30px'}} src="static/imgs/nav/calendar-icon.svg" /></button>
                 <button className="nav-link" onClick={() => props.togglePage('shop')}><img style={{width: '30px'}} src="static/imgs/nav/shop-icon.svg" /></button>
-                <button className="nav-link" onClick={() => props.togglePage('inv')}><img style={{width: '30px'}} src="static/imgs/nav/profile-icon.svg" /></button>
+                <button className="nav-link" disabled={props.disabled} onClick={() => props.togglePage('inv')}><img style={{width: '30px'}} src="static/imgs/nav/profile-icon.svg" /></button>
                 <div id="nav-pfp">L</div>
             </span>
         </div>

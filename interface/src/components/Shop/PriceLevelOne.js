@@ -32,14 +32,13 @@ const PriceLevelOne = (props) => {
         },{
             headers: {'X-CSRFToken': csrfToken}
         }).then(res => {
-            console.log(res)
             props.setWallet(rewardTotal)
         })
     }
 
     return (
         <>
-        <RewardCard img={props.image} name={props.name} price={'$350'} func={buyFunc} disabled={disabled}/>
+        <RewardCard img={props.image} name={props.name} btnText={'$350'} func={buyFunc} disabled={disabled}/>
         </>
     )
 }
