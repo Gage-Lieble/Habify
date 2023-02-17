@@ -5,10 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  overflow-x: hidden;
   background-color: #87CEEB;
-  max-height: 100vh;
-  overflow: hidden;
+  /* max-height: 100vh; */
+
 /* 
   background: rgb(255,255,255);
 background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(135,206,235,1) 0%, rgba(135,206,235,1) 15%, rgba(248,252,254,1) 15%, rgba(255,255,255,1) 100%); */
@@ -49,7 +49,12 @@ code {
   background-color: white;
   border-radius: 25px 25px 0px 0px;
   min-height: 100vh;
-  
+  overflow-y: scroll;
+  /* overflow-x: hidden; */
+  /* width: 100vw; */
+
+  display: flex;
+  flex-direction: column;
 }
 
 #calendarpg-wrap{
@@ -58,6 +63,7 @@ code {
 
 .page-title{
   margin-top: 0px;
+
 }
 #calendar-wrap{
   margin: 0 auto;
@@ -124,16 +130,6 @@ code {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 .reward-card{
   background-color: rgb(222, 222, 222);
   display: flex;
@@ -149,12 +145,15 @@ code {
 
 #shop-content{
   overflow-y: scroll;
-  height: 75vh;
+  /* height: 150%; */
   margin: auto;
   min-height: 80%;
   display: flex;
   flex-wrap: wrap;
+  background-color: pink;
 }
+
+
 
 
 .buy-btn{
@@ -165,22 +164,8 @@ code {
 }
 
 #shoppg-wrap{
-  /* padding: 20px 20px 0px 20px;
-  height: 100vh;
-   */
   padding: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 #inventorypg-wrap{
@@ -199,7 +184,7 @@ code {
   background-color: #87CEEB;
   border-radius: 10px;
   padding: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 #username-head{
   margin-top: 0px; 
