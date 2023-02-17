@@ -22,9 +22,14 @@ const Inventory = () => {
     }
     return (
         <div id="inventorypg-wrap">
-        <span>
-            <h2>Inventory - {userRewards.length}</h2> <a href="api/logout/">Logout</a>
-        </span>
+            <span id='profile-info'>
+                <span>
+                    <h2 id="username-head">{user.user}</h2>
+                    <a href="api/logout/">Logout</a>
+                </span>
+                <img id="profile-img" src='/static/imgs/pets/0.png'/>
+            </span>
+            <h2>Inventory - {userRewards.length}</h2> 
         <div id="shop-content">
             {userRewards.map((r) => (
             

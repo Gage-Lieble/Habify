@@ -191,9 +191,24 @@ code {
   margin-top: 0px;
 }
 
-#inventorypg-wrap>span{
-  width: 100%;
+
+#profile-info{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #87CEEB;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+#username-head{
+  margin-top: 0px; 
+  color: white;
+}
+
+#profile-img{
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  width: 50px;
 }
