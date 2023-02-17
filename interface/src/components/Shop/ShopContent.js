@@ -9,9 +9,9 @@ const ShopContent = () => {
         setWallet(wallet - debt)
     }
     return (
-        <>
-        <h3>This is shop ${wallet}</h3>
-        <br />
+        <div id="shoppg-wrap">
+        <h2 className="page-title">Market - ${wallet}</h2>
+        <div id="shop-content">
         <PriceLevelOne image={'/static/imgs/pets/0.png'} name="Aquilance" setWallet={displayWallet} /> <br />
         <PriceLevelOne image={'/static/imgs/pets/1.png'} name="Pyrogriff" setWallet={displayWallet} /> <br />
         <PriceLevelOne image={'/static/imgs/pets/2.png'} name="Draven" setWallet={displayWallet} /><br />
@@ -22,7 +22,9 @@ const ShopContent = () => {
         <PriceLevelOne image={'/static/imgs/pets/7.png'} name="Blacno" setWallet={displayWallet} /><br />
         <PriceLevelOne image={'/static/imgs/pets/8.png'} name="Petally" setWallet={displayWallet} /><br />
         <PriceLevelOne image={'/static/imgs/pets/9.png'} name="Skiddo" setWallet={displayWallet} /><br />
-        </>
+        
+        </div>
+        </div>
     )
 }
 
