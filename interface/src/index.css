@@ -147,10 +147,9 @@ code {
   overflow-y: scroll;
   /* height: 150%; */
   margin: auto;
-  min-height: 80%;
+  min-height: 90%;
   display: flex;
   flex-wrap: wrap;
-  background-color: pink;
 }
 
 
