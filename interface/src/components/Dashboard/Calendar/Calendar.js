@@ -88,7 +88,7 @@ const Calendar = (props) => {
             </div>
             <div id="mods-wrap">
               <h4>Streak: {props.streak} days</h4>
-              <h4>Multiplyer: x1.25</h4>
+              <h4>Multiplyer: x{props.mult}</h4>
             </div>
             <DayActivityForm />
         

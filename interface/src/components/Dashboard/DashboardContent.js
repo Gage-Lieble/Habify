@@ -19,11 +19,11 @@ const DashboardContent = () => {
         })
     },[setProfile, user])
     const [disabledBtn, setDisabledBtn] = useState(false)
-    const [innerCont, setInnerCont] = useState(<Calendar streak={profile.streak} />)
+    const [innerCont, setInnerCont] = useState(<Calendar streak={profile.streak} mult={profile.mult}/>)
     const togglePageFunc = (page) => {
         if (page === 'cal'){
             setDisabledBtn(false)
-            setInnerCont(<Calendar streak={profile.streak} />)
+            setInnerCont(<Calendar streak={profile.streak} mult={profile.mult}/>)
         }else if (page === 'shop'){
             setDisabledBtn(false)
             setInnerCont(<ShopContent />)
@@ -32,6 +32,7 @@ const DashboardContent = () => {
             setInnerCont(<Inventory />)
         }
     }
+    console.log(profile)
 
     return (
         <UserContext.Provider value={{user:user.user, coins: profile.coins}}>
