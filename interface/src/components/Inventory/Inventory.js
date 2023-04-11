@@ -7,11 +7,19 @@ const Inventory = () => {
     const user = useContext(UserContext)
 
     const [userRewards, setUserRewards] = useState([])
+    const [userPfp, setUserPfp] = useState()
     useEffect(() => {
         axios.get('rewards/api/rewards/').then(res => {
             for (let reward of res.data){
                 if (reward.user === user.user){
                     setUserRewards(prev => [...prev, reward])
+                } 
+            }
+        })
+        axios.get('api/profile/').then(res => {
+            for (let profile of res.data){
+                if (profile.user === user.user){
+                    setUserPfp(profile.pfp)
                 } 
             }
         })
@@ -27,7 +35,7 @@ const Inventory = () => {
                     <h2 id="username-head">{user.user}</h2>
                     <a href="api/logout/">Logout</a>
                 </span>
-                <img id="profile-img" src='/static/imgs/pets/0.png'/>
+                <img id="profile-img" src={userPfp}/>
             </span>
             <h2>Inventory - {userRewards.length}</h2> 
         <div id="shop-content">

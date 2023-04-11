@@ -66,7 +66,7 @@ const Calendar = (props) => {
     useEffect(() => {
         const colorCustomization = {
             activity0: '#dadada',
-            activity1: '#ffffff',
+            activity1: '#FF3131',
             activity2: '#dadada',
             activity3: '#dadada',
             activity4: '#50C878',
