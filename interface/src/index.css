@@ -50,6 +50,7 @@ code {
   border-radius: 25px 25px 0px 0px;
   min-height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   /* overflow-x: hidden; */
   /* width: 100vw; */
 
@@ -195,4 +196,10 @@ code {
   border-radius: 10px;
   padding: 5px;
   width: 50px;
+}
+
+.completed-form-msg{
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
 }

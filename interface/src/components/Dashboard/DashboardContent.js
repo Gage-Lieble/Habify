@@ -35,7 +35,7 @@ const DashboardContent = () => {
     console.log(profile)
 
     return (
-        <UserContext.Provider value={{user:user.user, coins: profile.coins}}>
+        <UserContext.Provider value={{user:user.user, coins: profile.coins, mult: '1', streak: profile.streak}}>
         
             {/* <QuotesRender /> */}
             <HeaderCont togglePage={togglePageFunc} disabled={disabledBtn}/>

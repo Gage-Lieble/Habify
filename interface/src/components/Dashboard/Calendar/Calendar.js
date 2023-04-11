@@ -66,9 +66,9 @@ const Calendar = (props) => {
     useEffect(() => {
         const colorCustomization = {
             activity0: '#dadada',
-            activity1: '#ffffff',
-            activity2: '#FFC0CB',
-            activity3: '#A020F0',
+            activity1: '#FF3131',
+            activity2: '#dadada',
+            activity3: '#dadada',
             activity4: '#50C878',
           }
           if(didMount.current){
@@ -87,8 +87,8 @@ const Calendar = (props) => {
                 {actCal}
             </div>
             <div id="mods-wrap">
-              <h4>Streak: {props.streak} days</h4>
-              <h4>Multiplyer: x{props.mult}</h4>
+              <h4>Streak: {user.streak} days</h4>
+              <h4>Multiplyer: x{user.mult}</h4>
             </div>
             <DayActivityForm />
         
