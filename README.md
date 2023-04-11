@@ -1,13 +1,13 @@
-# Soberize
+# Habify
 ![Django](https://img.shields.io/badge/django-EFEFEF.svg?style=for-the-badge&logo=django&logoColor=black)
 ![React](https://img.shields.io/badge/react-EFEFEF.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-EFEFEF.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Python](https://img.shields.io/badge/python-EFEFEF?style=for-the-badge&logo=python&logoColor=4584b6)
 
-> Sobriety tracking app to assist users with any habit
+> Habify is a tracking app to assist users with any habit
 
 ## Project outline
-Soberize is a sobriety/habit tracking app. Users have the ability to create accounts, track days that they have reframed from doing their bad habit and get coins gained through daily use that can buy various rewards. After creating an account, users will have their own dashboard with a calendar along with their streak. The streak measures how many weeks the user has lasted, and resets after one "fail". Hitting streak milestones will apply a coin multiplyer increasing the gain of daily coins. This calendar also comes a daily form that will ask the user if they were successful! 
+Habify is a habit tracking app. Users have the ability to create accounts, track days that they have reframed from doing their bad habit and get coins gained through daily use that can buy various rewards. After creating an account, users will have their own dashboard with a calendar along with their streak. The streak measures how many weeks the user has lasted, and resets after one "fail". Hitting streak milestones will apply a coin multiplyer increasing the gain of daily coins. This calendar also comes a daily form that will ask the user if they were successful! 
 Other pages include *The Shop*, *Purchased*. 
 
 ## Data model 
