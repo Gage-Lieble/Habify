@@ -6,6 +6,13 @@
 
 > Habify is a tracking app to assist users with any habit
 
+## Manual QA Test Cases
+| Case ID | Test Scenario | Steps to Reproduce | Expected Result | Actual Result | Status | Notes |
+|---------------|----------------|--------------------|-----------------|----------------|--------|----------------|
+| TC-01 | Empty sign-up form | 1. Select "toggle" to view sign-up page 2. Leave some or all fields blank 3. Select "Submit" | Validation errors should populate the page to inform the user that they must enter their username, name, and password | No errors populate the page, and the app fails to create a profile | <span style="color: red;">Failed</span> | The user is left with no visual cues explaining why the page refreshed with no result. Add error messages to convey that the form must be completed. |
+| TC-02 | Purchase from market | 1. Select market icon 2. Select "Buy" under the desired item 3. View inventory to see purchased items | After clicking "Buy", the desired item should be added to the inventory | Works as expected | <span style="color: green;">Passed</span> - <span style="color: orange;">Improvement suggested</span> | The purchase functionality works, and items are correctly added to the inventory. However, no confirmation message is displayed after clicking the purchase button, leaving the transaction outcome unclear. |
+| TC-03 | Submit a streak without selecting "Pass" or "Fail" | 1. Enter a note into the text field 2. Avoid selecting "Pass" or "Fail" 3. Select "Submit" | Validation errors should populate the page to inform the user that they must select "Pass" or "Fail" to mark the calendar. | No errors populate the page, and the app fails to update the calendar | <span style="color: red;">Failed</span> | The app refreshes without informing the user that their streak submission failed. Validation errors should be added to inform the user to try again. |
+
 ## Project outline
 Habify is a habit tracking app. Users have the ability to create accounts, track days that they have reframed from doing their bad habit and get coins gained through daily use that can buy various rewards. After creating an account, users will have their own dashboard with a calendar along with their streak. The streak measures how many weeks the user has lasted, and resets after one "fail". Hitting streak milestones will apply a coin multiplyer increasing the gain of daily coins. This calendar also comes a daily form that will ask the user if they were successful! 
 Other pages include *The Shop*, *Purchased*. 
